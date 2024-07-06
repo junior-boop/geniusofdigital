@@ -81,7 +81,7 @@ export default function Home() {
     <>
       <main>
         <Header />
-        <div ref={headerRef} className="bg-radius">
+        <div ref={headerRef} className="bg-radius text-white">
           <Container>
             <div className="h-[100dvh] flex items-center justify-center ">
               <div className="w-full px-4 relative flex flex-col items-center lg:block">
