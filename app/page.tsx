@@ -18,7 +18,7 @@ export default function Home() {
   const headerRef = useRef<any>()
 
   const lineHeight = 0.92
-  const styleDisplay = "font-display text-[36px] lg:text-[96px] italic text-white relative"
+  const styleDisplay = "font-display text-[36px] lg:text-[96px] italic relative"
 
   const AnimeLine = (ref: any, delay: number, opacity = 0.7) => {
     const characters = ref.current.innerText.split('')
@@ -32,7 +32,7 @@ export default function Home() {
     })
 
     ref.current.innerHTML = characters
-      .map((char: string) => `<span class = "font-display">${char}</span>`)
+      .map((char: string) => `<span class = "font-display text-white">${char}</span>`)
       .join('');
 
     anime({
@@ -159,7 +159,7 @@ export default function Home() {
               <h1 className="font-display italic text-[40px] px-4 lg:px-0 mb-3" style={{ lineHeight: 1 }}>
                 some of our template.
               </h1>
-              <div className="lg:w-[50%] mb-[79px] px-4 lg:px-0">
+              <div className="lg:w-[50%] mb-[79px] px-4 lg:px-0 text-white">
                 <p>These templates are websites or applications that are either completed or in progress that you may request for usage in your project.</p>
               </div>
               <div>
@@ -183,9 +183,9 @@ interface DescBlock {
 function DescBlock({ title, desc }: DescBlock) {
   return (
     <div className="flex-1 p-8 bg-[#fff2] text-white h-auto">
-      <h3 className="text-[20px] font-medium mb-5">{title}</h3>
+      <h3 className="text-[20px] font-medium mb-5 text-white">{title}</h3>
       <div>
-        <p>{desc}</p>
+        <p className="text-white">{desc}</p>
       </div>
     </div>
   )

@@ -39,7 +39,7 @@ export default function Header({ position }: Header) {
                             <NavItem title="about-us" url="/about-us" />
                         </ul>
                         <Link href={'/contact'} >
-                            <div className="px-[18px] py-[10px] flex items-center rounded-full font-semibold text-[20px] bg-[#fff2]">
+                            <div className="px-[18px] py-[10px] flex items-center text-white rounded-full font-semibold text-[20px] bg-[#fff2]">
                                 contact
                             </div>
                         </Link>
@@ -82,7 +82,7 @@ interface NavItem {
 function NavItem({ url = '/', title }: NavItem) {
     return (
         <Link href={url}>
-            <li className="text-[20px] font-semibold">{title}</li>
+            <li className="text-[20px] font-semibold text-white">{title}</li>
         </Link>
     )
 }
