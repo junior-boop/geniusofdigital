@@ -28,7 +28,7 @@ export default function Header({ position }: Header) {
         <header className="lg:h-[92px] bg-transparent flex fixed w-full text-white z-50" style={{ backdropFilter: 'blur(10px)' }}>
             <Container>
                 <div className="flex h-full items-center justify-between px-4 lg:px-0 py-4 lg:py-0">
-                    <div className="hidden lg:block font-robotoSerif font-semibold text-2xl">#geniusOfDigital</div>
+                    <div className="hidden lg:block font-robotoSerif font-semibold text-2xl text-white">#geniusOfDigital</div>
                     <div className="lg:hidden w-[48px] aspect-square relative">
                         <Image src={'/logo.png'} fill alt="logo #geniusofdidital" />
                     </div>
