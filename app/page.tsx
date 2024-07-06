@@ -98,8 +98,8 @@ export default function Home() {
               <h1 className="font-display italic text-[40px] text-white">
                 what we do.
               </h1>
-              <div className="lg:w-[50%] text-white mb-[79px]">
-                <p>Create, develop, deploy, and maintain websites. We are dedicated to creating online environments that provide the greatest possible digital experience, balancing beauty and functionality.</p>
+              <div className="lg:w-[50%] mb-[79px]">
+                <p className="text-white">Create, develop, deploy, and maintain websites. We are dedicated to creating online environments that provide the greatest possible digital experience, balancing beauty and functionality.</p>
               </div>
               <div className="flex gap-4 lg:gap-[30px] flex-col lg:flex-row ">
                 <DescBlock
@@ -159,7 +159,7 @@ export default function Home() {
               <h1 className="font-display italic text-[40px] px-4 lg:px-0 mb-3" style={{ lineHeight: 1 }}>
                 some of our template.
               </h1>
-              <div className="lg:w-[50%] mb-[79px] px-4 lg:px-0 text-white">
+              <div className="lg:w-[50%] mb-[79px] px-4 lg:px-0 ">
                 <p>These templates are websites or applications that are either completed or in progress that you may request for usage in your project.</p>
               </div>
               <div>

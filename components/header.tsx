@@ -46,7 +46,7 @@ export default function Header({ position }: Header) {
                     </div>
                     <div className="lg:hidden">
                         <button onClick={() => setMenuToggle(true)}>
-                            <RiMenu3Fill className="h-9 w-9" />
+                            <RiMenu3Fill className="h-9 w-9 text-white" />
                         </button>
                     </div>
                     {
