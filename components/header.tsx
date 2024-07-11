@@ -69,7 +69,7 @@ export default function Header({ position }: Header) {
                     </div>
                     {
                         menuToggle
-                        && (<div ref={menuref} className="flex lg:hidden fixed h-[100dvh] w-full bg-[#fffd] top-0 left-0 flex-col">
+                        && (<div ref={menuref} className="flex lg:hidden fixed h-[100dvh] w-full bg-[#fff] top-0 left-0 flex-col">
                             <div className="px-4 pt-4 flex items-center justify-end h-fit w-full">
                                 <div>
                                     <button onClick={() => setMenuToggle(false)} className="text-gray-800 w-9 aspect-square rounded-full flex items-center justify-center">
