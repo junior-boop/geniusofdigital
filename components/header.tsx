@@ -79,6 +79,9 @@ export default function Header({ position }: Header) {
                             </div>
                             <div>
                                 <ul className="flex flex-col items-start text-gray-800 gap-4 p-6">
+                                    <Link href="/">
+                                        <li><span className="text-gray-800 font-semibold text-5xl">home</span></li>
+                                    </Link>
                                     <Link href="/services">
                                         <li><span className="text-gray-800 font-semibold text-5xl">service</span></li>
                                     </Link>
@@ -87,6 +90,9 @@ export default function Header({ position }: Header) {
                                     </Link>
                                     <Link href="/about-us">
                                         <li><span className="text-gray-800 font-semibold text-5xl">about-us</span></li>
+                                    </Link>
+                                    <Link href="/contact">
+                                        <li><span className="text-gray-800 font-semibold text-5xl">contact</span></li>
                                     </Link>
                                 </ul>
                             </div>
