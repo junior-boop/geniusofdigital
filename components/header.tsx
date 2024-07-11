@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import Container from "./container";
 import Image from "next/image";
@@ -77,10 +78,16 @@ export default function Header({ position }: Header) {
                                 </div>
                             </div>
                             <div>
-                                <ul className="flex flex-col items-center text-gray-800 gap-4">
-                                    <NavItem title="service" url="/services" />
-                                    <NavItem title="our work" url="/works" />
-                                    <NavItem title="about-us" url="/about-us" />
+                                <ul className="flex flex-col items-start text-gray-800 gap-4 p-6">
+                                    <Link href="/services">
+                                        <li><span className="text-gray-800 font-semibold text-5xl">service</span></li>
+                                    </Link>
+                                    <Link href="/works">
+                                        <li><span className="text-gray-800 font-semibold text-5xl">our work</span></li>
+                                    </Link>
+                                    <Link href="/about-us">
+                                        <li><span className="text-gray-800 font-semibold text-5xl">about-us</span></li>
+                                    </Link>
                                 </ul>
                             </div>
                         </div>)

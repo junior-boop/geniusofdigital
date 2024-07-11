@@ -20,7 +20,7 @@ export default function Home() {
   const displayRef_4 = useRef<any>()
   const headerRef = useRef<any>()
 
-  const today = new Date()
+
 
   const [headerHeight, setHeader] = useState(0)
 
@@ -111,7 +111,6 @@ export default function Home() {
   return (
     <>
       <main>
-        <Header position={headerHeight} />
         <div ref={headerRef} className="bg-radius text-white">
           <Container>
             <div className="h-[100dvh] flex items-center justify-center ">
@@ -214,34 +213,7 @@ export default function Home() {
 
           </Container>
         </div>
-        <div className="bg-black px-4 lg:px-0 py-[50px] lg:py-10">
-          <Container>
-            <div className="flex items-center flex-col lg:flex-row gap-8">
-              <section className="flex-1 flex items-center gap-4">
-                <div className="w-[56px] aspect-square relative">
-                  <Image src={'/logo.png'} alt="logo geniusofdigital" fill />
-                </div>
-                <div className="font-bold text-[20px] text-white">
-                  #geniusOfDigital
-                </div>
-              </section>
-              <section className="flex-1 flex justify-center gap-4">
-                <Link href={'https://web.facebook.com/geniusofdigital'}>
-                  <RiFacebookCircleFill className="w-9 h-9 text-white" color="white" />
-                </Link>
-                <Link href={'https://www.linkedin.com/company/geniusofdigital/'}>
-                  <RiLinkedinBoxFill className="w-9 h-9 text-white" color="white" />
-                </Link>
-                <Link href={'/'}>
-                  <RiTwitterXFill className="w-9 h-9 text-white" color="white" />
-                </Link>
-              </section>
-              <section className="flex-1 flex justify-end">
-                <span className="text-white"><strong>&copy; {today.getFullYear()}</strong>. All rights reserved</span>
-              </section>
-            </div>
-          </Container>
-        </div>
+
       </main>
     </>
   );
