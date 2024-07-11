@@ -80,19 +80,19 @@ export default function Header({ position }: Header) {
                             <div>
                                 <ul className="flex flex-col items-start text-gray-800 gap-4 p-4">
                                     <Link href="/" className="menuphone">
-                                        <li><span className="text-gray-800 font-semibold text-5xl">home</span></li>
+                                        <li><span className="text-gray-800 font-semibold text-[48px]">home</span></li>
                                     </Link>
                                     <Link href="/services" className="menuphone">
-                                        <li><span className="text-gray-800 font-semibold text-5xl">service</span></li>
+                                        <li><span className="text-gray-800 font-semibold text-[48px]">service</span></li>
                                     </Link>
                                     <Link href="/works" className="menuphone">
-                                        <li><span className="text-gray-800 font-semibold text-5xl">our work</span></li>
+                                        <li><span className="text-gray-800 font-semibold text-[48px]">our work</span></li>
                                     </Link>
                                     <Link href="/about-us" className="menuphone">
-                                        <li><span className="text-gray-800 font-semibold text-5xl">about-us</span></li>
+                                        <li><span className="text-gray-800 font-semibold text-[48px]">about-us</span></li>
                                     </Link>
                                     <Link href="/contact" className="menuphone">
-                                        <li><span className="text-gray-800 font-semibold text-5xl">contact</span></li>
+                                        <li><span className="text-gray-800 font-semibold text-[48px]">contact</span></li>
                                     </Link>
                                 </ul>
                             </div>
