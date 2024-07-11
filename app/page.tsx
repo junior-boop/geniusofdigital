@@ -226,10 +226,10 @@ export default function Home() {
                 </div>
               </section>
               <section className="flex-1 flex justify-center gap-4">
-                <Link href={'/'}>
+                <Link href={'https://web.facebook.com/geniusofdigital'}>
                   <RiFacebookCircleFill className="w-9 h-9 text-white" color="white" />
                 </Link>
-                <Link href={'/'}>
+                <Link href={'https://www.linkedin.com/company/geniusofdigital/'}>
                   <RiLinkedinBoxFill className="w-9 h-9 text-white" color="white" />
                 </Link>
                 <Link href={'/'}>
@@ -273,7 +273,7 @@ interface Projets {
 }
 function Projets({ image, theme, title }: Projets) {
   return (
-    <Link href={'/'}>
+    <Link href={'/'} style={{ scrollSnapAlign: "center" }}>
       <div>
         <div className="w-[350px] lg:w-[500px] aspect-[4/3] bg-slate-400 relative">
           <Image src={'/globalopportunities.png'} alt="" fill className="object-cover" />
