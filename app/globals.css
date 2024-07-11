@@ -45,6 +45,14 @@ body {
    #483F04 0%, #291F02 100%);
 }
 
+.menuphone{
+  @apply px-3 py-2;
+}
+
+.menuphone + .menuphone{
+  @apply border-t
+}
+
 .CarouselContent {
   padding-block-end: 8px;
   overscroll-behavior-x: contain;
