@@ -152,10 +152,10 @@ export default function Home() {
         <div className="py-[150px]">
           <Container>
             <div className="">
-              <h1 className="font-display italic text-[40px] px-4 lg:px-0">
+              <h1 className="font-display italic text-[40px] px-4 lg:px-0 text-gray-800">
                 selected work.
               </h1>
-              <div className="lg:w-[50%] mb-[79px] px-4 lg:px-0">
+              <div className="lg:w-[50%] mb-[79px] px-4 lg:px-0 text-gray-800">
                 <p>As a new firm, they trusted us to design and develop their website. As always, we committed to producing high-quality work.</p>
               </div>
               <div>
@@ -168,7 +168,7 @@ export default function Home() {
                         <h1 className="text-[#483F04] text-[32px] lg:text-[48px] font-bold mb-5" style={{ lineHeight: 1 }}>
                           Contact-us for your website
                         </h1>
-                        <p>
+                        <p className="text-gray-800">
                           Please provide us with all of the features of your website or application, and we will make suggestions.
                         </p>
                       </div>
@@ -187,11 +187,11 @@ export default function Home() {
         <div className="pb-[150px]">
           <Container>
             <div className="">
-              <h1 className="font-display italic text-[40px] px-4 lg:px-0 mb-3" style={{ lineHeight: 1 }}>
+              <h1 className="font-display italic text-[40px] px-4 lg:px-0 mb-3 text-gray-800" style={{ lineHeight: 1 }}>
                 some of our template.
               </h1>
               <div className="lg:w-[50%] mb-[79px] px-4 lg:px-0 ">
-                <p>These templates are websites or applications that are either completed or in progress that you may request for usage in your project.</p>
+                <p className="text-gray-800">These templates are websites or applications that are either completed or in progress that you may request for usage in your project.</p>
               </div>
               <div>
                 <MostReadField>
@@ -279,8 +279,8 @@ function Projets({ image, theme, title }: Projets) {
           <Image src={'/globalopportunities.png'} alt="" fill className="object-cover" />
         </div>
         <div>
-          <h3 className="text-[20px] font-semibold my-2">{title}</h3>
-          <div className="px-4 py-2 font-semibold bg-[#71FFDA33] w-fit">
+          <h3 className="text-[20px] font-semibold my-2 text-gray-800">{title}</h3>
+          <div className="px-4 py-2 font-semibold bg-[#71FFDA33] w-fit text-gray-800">
             {theme}
           </div>
         </div>
