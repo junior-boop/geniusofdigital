@@ -46,7 +46,7 @@ body {
 }
 
 .menuphone{
-  @apply px-3 py-2;
+  @apply px-3 py-2 w-full;
 }
 
 .menuphone + .menuphone{
