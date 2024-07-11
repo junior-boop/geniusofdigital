@@ -11,7 +11,7 @@ interface MostRead {
 export default function MostRead({ image, name, logo }: MostRead) {
     return (
         <Link href={'/'}>
-            <div className=" w-[350px] lg:w-[500px] aspect-square bg-no-repeat bg-cover overflow-hidden" style={{ backgroundImage: `url(${image})` }}>
+            <div className=" w-[350px] lg:w-[500px] aspect-square bg-no-repeat bg-cover overflow-hidden" style={{ backgroundImage: `url(${image})`, scrollSnapAlign: "center" }}>
                 <div className="w-full h-full bg-[#0004] p-9 flex flex-col justify-end">
 
                     <div>

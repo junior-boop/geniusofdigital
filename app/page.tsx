@@ -3,12 +3,15 @@ import Container from "@/components/container";
 import Header from "@/components/header";
 import Image from "next/image";
 import Link from "next/link";
-import { scroll } from "framer-motion";
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 import anime from "@/lib/anime.es";
-import { useEffect, useRef } from "react";
+import { forwardRef, useEffect, useRef, useLayoutEffect, useState } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import MostReadField from "@/components/mostreadfeld";
 import MostRead from "@/components/most_read";
+import { RiFacebookCircleFill, RiLinkedinBoxFill, RiTwitterXFill } from "@/components/icons";
 
 export default function Home() {
   const displayRef_1 = useRef<any>()
@@ -16,6 +19,12 @@ export default function Home() {
   const displayRef_3 = useRef<any>()
   const displayRef_4 = useRef<any>()
   const headerRef = useRef<any>()
+
+  const today = new Date()
+
+  const [headerHeight, setHeader] = useState(0)
+
+  const container = useRef<any>()
 
   const lineHeight = 0.92
   const styleDisplay = "font-display text-[36px] lg:text-[96px] italic relative"
@@ -62,25 +71,47 @@ export default function Home() {
 
   }, [])
 
+  // useIsomophLayout(() => {
+  //   gsap.context(() => {
+
+  //   })
+  // }, [])
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.descblock',
+        start: 'top 80%',
+        toggleActions: "play none none none"
+      }
+    })
+
+
+    tl.from(".descblock", {
+      opacity: 0,
+      y: 100,
+      stagger: {
+        each: 0.3
+      },
+      duration: 0.5
+    })
+
+  }, { scope: container })
+
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const head = headerRef.current.offsetHeight
-      const doc = document.body.offsetHeight
-
-      const headerEndPorcent = head / doc
-      console.log(headerEndPorcent)
+      setHeader(head)
     }
   }, [])
 
-  // scroll((value) => {
-  //   console.log(value)
-  // })
 
   return (
     <>
       <main>
-        <Header />
+        <Header position={headerHeight} />
         <div ref={headerRef} className="bg-radius text-white">
           <Container>
             <div className="h-[100dvh] flex items-center justify-center ">
@@ -101,7 +132,7 @@ export default function Home() {
               <div className="lg:w-[50%] mb-[79px]">
                 <p className="text-white">Create, develop, deploy, and maintain websites. We are dedicated to creating online environments that provide the greatest possible digital experience, balancing beauty and functionality.</p>
               </div>
-              <div className="flex gap-4 lg:gap-[30px] flex-col lg:flex-row ">
+              <div ref={container} className="flex gap-4 lg:gap-[30px] flex-col lg:flex-row ">
                 <DescBlock
                   title="Web Design"
                   desc="We design and construct functional websites. Each company as well as every individual client. Lovely in terms of design. Effortless in their application. Made to leave the kind of impressions you want"
@@ -131,7 +162,7 @@ export default function Home() {
                 <MostReadField>
                   <MostRead image="/principe.jpg" logo="/logo_black.png" name="Konji Farm" />
                   <MostRead image="/leo_energy.png" logo="/logo_leo_white.png" name="Leo Energy" />
-                  <Link href={"/order"} >
+                  <Link href={"/order"} style={{ scrollSnapAlign: "center" }} >
                     <div className="w-[350px] lg:w-[500px] aspect-square   border border-[#5EF6CE] p-8 bg-[#ECFFFA] flex flex-col justify-between">
                       <div>
                         <h1 className="text-[#483F04] text-[32px] lg:text-[48px] font-bold mb-5" style={{ lineHeight: 1 }}>
@@ -170,6 +201,47 @@ export default function Home() {
             </div>
           </Container>
         </div>
+        <div className="bg-radius px-4 lg:px-0 py-[50px] lg:py-10 ">
+          <Container>
+            <div className="flex flex-col lg:flex-row gap-10 justify-center items-center lg:items-center lg:justify-between ">
+              <div className="text-[52px] text-center lg:text-left lg:text-[32px] uppercase font-bold text-white" style={{ lineHeight: 1 }}>leave us a message</div>
+              <Link href={'/contact'} className="flex w-fit" >
+                <div className="px-[18px] py-[10px] flex items-center text-white rounded-full font-semibold text-[20px] bg-[#fff2] uppercase">
+                  click here
+                </div>
+              </Link>
+            </div>
+
+          </Container>
+        </div>
+        <div className="bg-black px-4 lg:px-0 py-[50px] lg:py-10">
+          <Container>
+            <div className="flex items-center flex-col lg:flex-row gap-8">
+              <section className="flex-1 flex items-center gap-4">
+                <div className="w-[56px] aspect-square relative">
+                  <Image src={'/logo.png'} alt="logo geniusofdigital" fill />
+                </div>
+                <div className="font-bold text-[20px] text-white">
+                  #geniusOfDigital
+                </div>
+              </section>
+              <section className="flex-1 flex justify-center gap-4">
+                <Link href={'/'}>
+                  <RiFacebookCircleFill className="w-9 h-9 text-white" color="white" />
+                </Link>
+                <Link href={'/'}>
+                  <RiLinkedinBoxFill className="w-9 h-9 text-white" color="white" />
+                </Link>
+                <Link href={'/'}>
+                  <RiTwitterXFill className="w-9 h-9 text-white" color="white" />
+                </Link>
+              </section>
+              <section className="flex-1 flex justify-end">
+                <span className="text-white"><strong>&copy; {today.getFullYear()}</strong>. All rights reserved</span>
+              </section>
+            </div>
+          </Container>
+        </div>
       </main>
     </>
   );
@@ -180,16 +252,18 @@ interface DescBlock {
   desc: string;
 }
 
-function DescBlock({ title, desc }: DescBlock) {
+const DescBlock = forwardRef<HTMLDivElement, DescBlock>(({ title, desc }, ref) => {
   return (
-    <div className="flex-1 p-8 bg-[#fff2] text-white h-auto">
+    <div ref={ref} className="descblock flex-1 p-8 bg-[#fff2] text-white h-auto">
       <h3 className="text-[20px] font-medium mb-5 text-white">{title}</h3>
       <div>
         <p className="text-white">{desc}</p>
       </div>
     </div>
   )
-}
+})
+
+DescBlock.displayName = 'DescBlock'
 
 
 interface Projets {

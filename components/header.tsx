@@ -3,7 +3,7 @@ import Container from "./container";
 import Image from "next/image";
 import { RiCloseLargeLine, RiMenu3Fill } from "./icons";
 import anime from '@/lib/anime.es'
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 
 interface Header {
     position?: number
@@ -11,7 +11,10 @@ interface Header {
 
 export default function Header({ position }: Header) {
     const [menuToggle, setMenuToggle] = useState<boolean>(false)
+    const [menublack, setblack] = useState(false)
     const menuref = useRef<any>()
+
+    const useIsomophLayout = (typeof window !== 'undefined') ? useEffect : useLayoutEffect
 
     useEffect(() => {
         if (menuToggle) {
@@ -24,8 +27,22 @@ export default function Header({ position }: Header) {
             })
         }
     }, [menuToggle])
+
+
+    useIsomophLayout(() => {
+        window.addEventListener('scroll', () => {
+            if (scrollY > (position as number - 75)) {
+                setblack(true)
+            } else {
+                setblack(false)
+            }
+            console.log(position, scrollY)
+        })
+    }, [position])
+
+
     return (
-        <header className="lg:h-[92px] bg-transparent flex fixed w-full text-white z-50" style={{ backdropFilter: 'blur(10px)' }}>
+        <header className={`lg:h-[92px] bg-transparent flex fixed w-full transition-all duration-300 ease-in-out text-white z-50 ${menublack ? 'bg-[#483f04bb]' : ''}`} style={{ backdropFilter: 'blur(10px)' }}>
             <Container>
                 <div className="flex h-full items-center justify-between px-4 lg:px-0 py-4 lg:py-0">
                     <div className="hidden lg:block font-robotoSerif font-semibold text-2xl text-white">#geniusOfDigital</div>
