@@ -379,7 +379,7 @@ function FormItems({ data, title }: FormItems) {
 
     return (
         <div className="px-4 lg:px-9 border py-4 lg:py-9 mb-6 bg-white transition-all ease-in-out duration-300">
-            <div className="font-bold text-lg lg:text-2xl" dangerouslySetInnerHTML={{ __html: title }}></div>
+            <div className="font-bold text-lg lg:text-2xl text-gray-800" dangerouslySetInnerHTML={{ __html: title }}></div>
             {
                 data.map((el, key) => <DynamicInput label={el.label} type={el.type} name={el.name} placeholder={el.placeholder} required={el.required} key={key} />)
             }
