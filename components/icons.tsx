@@ -46,3 +46,10 @@ export function RiTwitterXFill(props: SVGProps<SVGSVGElement>) {
         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"></path></svg>
     )
 }
+
+
+export function SvgSpinners8DotsRotate(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><g><circle cx="3" cy="12" r="2" fill="currentColor"></circle><circle cx="21" cy="12" r="2" fill="currentColor"></circle><circle cx="12" cy="21" r="2" fill="currentColor"></circle><circle cx="12" cy="3" r="2" fill="currentColor"></circle><circle cx="5.64" cy="5.64" r="2" fill="currentColor"></circle><circle cx="18.36" cy="18.36" r="2" fill="currentColor"></circle><circle cx="5.64" cy="18.36" r="2" fill="currentColor"></circle><circle cx="18.36" cy="5.64" r="2" fill="currentColor"></circle><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"></animateTransform></g></svg>
+    )
+}

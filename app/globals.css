@@ -45,6 +45,10 @@ body {
    #483F04 0%, #291F02 100%);
 }
 
+.logo {
+  user-select: none
+}
+
 .menuphone{
   @apply px-3 py-2 w-full;
 }

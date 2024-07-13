@@ -118,7 +118,7 @@ export default function Home() {
                 <div ref={displayRef_1} className={`${styleDisplay}  opacity-70`} style={{ lineHeight: lineHeight }}>we design and build</div>
                 <div ref={displayRef_2} className={`${styleDisplay} opacity-70 lg:left-[15%]`} style={{ lineHeight: lineHeight }}>applications for your</div>
                 <div ref={displayRef_3} className={`${styleDisplay}`} style={{ lineHeight: lineHeight }}>business</div>
-                <Link ref={displayRef_4} href={'/'} className="absolute bottom-[-60px] lg:bottom-[-12%] lg:left-[32%] text-white ">
+                <Link ref={displayRef_4} href={'/order'} className="absolute bottom-[-60px] lg:bottom-[-12%] lg:left-[32%] text-white ">
                   <button className="lg:text-[32px] px-5 py-3 lg:px-[49px] lg:py-[30px] bg-[#71FFDA32] rounded-full font-semibold lg:ml-[40px]">
                     Contact-us for your website
                   </button></Link>
@@ -200,19 +200,7 @@ export default function Home() {
             </div>
           </Container>
         </div>
-        <div className="bg-radius px-4 lg:px-0 py-[50px] lg:py-10 ">
-          <Container>
-            <div className="flex flex-col lg:flex-row gap-10 justify-center items-center lg:items-center lg:justify-between ">
-              <div className="text-[52px] text-center lg:text-left lg:text-[32px] uppercase font-bold text-white" style={{ lineHeight: 1 }}>leave us a message</div>
-              <Link href={'/contact'} className="flex w-fit" >
-                <div className="px-[18px] py-[10px] flex items-center text-white rounded-full font-semibold text-[20px] bg-[#fff2] uppercase">
-                  click here
-                </div>
-              </Link>
-            </div>
-
-          </Container>
-        </div>
+        <MessageUs />
 
       </main>
     </>
@@ -258,5 +246,24 @@ function Projets({ image, theme, title }: Projets) {
         </div>
       </div>
     </Link>
+  )
+}
+
+
+export function MessageUs() {
+  return (
+    <div className="bg-radius px-4 lg:px-0 py-[50px] lg:py-10 ">
+      <Container>
+        <div className="flex flex-col lg:flex-row gap-10 justify-center items-center lg:items-center lg:justify-between ">
+          <div className="text-[52px] text-center lg:text-left lg:text-[32px] uppercase font-bold text-white" style={{ lineHeight: 1 }}>leave us a message</div>
+          <Link href={'/contact'} className="flex w-fit" >
+            <div className="px-[18px] py-[10px] flex items-center text-white rounded-full font-semibold text-[20px] bg-[#fff2]">
+              click here
+            </div>
+          </Link>
+        </div>
+
+      </Container>
+    </div>
   )
 }

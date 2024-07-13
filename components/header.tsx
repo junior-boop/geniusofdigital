@@ -37,7 +37,6 @@ export default function Header({ position }: Header) {
             } else {
                 setblack(false)
             }
-            console.log(position, scrollY)
         })
     }, [position])
 
@@ -46,7 +45,9 @@ export default function Header({ position }: Header) {
         <header className={`lg:h-[92px] bg-transparent flex fixed w-full transition-all duration-300 ease-in-out text-white z-50 ${menublack ? 'bg-[#483f04bb]' : ''}`} style={{ backdropFilter: 'blur(10px)' }}>
             <Container>
                 <div className="flex h-full items-center justify-between px-4 lg:px-0 py-4 lg:py-0">
-                    <div className="hidden lg:block font-robotoSerif font-semibold text-2xl text-white">#geniusOfDigital</div>
+                    <div className="logo hidden lg:block font-robotoSerif font-semibold text-2xl text-white" >
+                        <Link href={'/'} className="font-robotoSerif">#geniusOfDigital</Link>
+                    </div>
                     <div className="lg:hidden w-[48px] aspect-square relative">
                         <Image src={'/logo.png'} fill alt="logo #geniusofdidital" />
                     </div>
@@ -79,19 +80,19 @@ export default function Header({ position }: Header) {
                             </div>
                             <div>
                                 <ul className="flex flex-col items-start text-gray-800 gap-4 p-4">
-                                    <Link href="/" className="menuphone">
+                                    <Link onClick={() => setMenuToggle(false)} href="/" className="menuphone">
                                         <li><span className="text-gray-800 font-semibold text-[48px]" style={{ lineHeight: 1 }}>home</span></li>
                                     </Link>
-                                    <Link href="/services" className="menuphone">
+                                    <Link onClick={() => setMenuToggle(false)} href="/services" className="menuphone">
                                         <li><span className="text-gray-800 font-semibold text-[48px]" style={{ lineHeight: 1 }}>service</span></li>
                                     </Link>
-                                    <Link href="/works" className="menuphone">
+                                    <Link onClick={() => setMenuToggle(false)} href="/works" className="menuphone">
                                         <li><span className="text-gray-800 font-semibold text-[48px]" style={{ lineHeight: 1 }}>our work</span></li>
                                     </Link>
-                                    <Link href="/about-us" className="menuphone">
+                                    <Link onClick={() => setMenuToggle(false)} href="/about-us" className="menuphone">
                                         <li><span className="text-gray-800 font-semibold text-[48px]" style={{ lineHeight: 1 }}>about-us</span></li>
                                     </Link>
-                                    <Link href="/contact" className="menuphone">
+                                    <Link onClick={() => setMenuToggle(false)} href="/contact" className="menuphone">
                                         <li><span className="text-gray-800 font-semibold text-[48px]" style={{ lineHeight: 1 }}>contact</span></li>
                                     </Link>
                                 </ul>
