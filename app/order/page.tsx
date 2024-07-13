@@ -171,7 +171,7 @@ const teste: FormItems[] = [
         title: "8) Do you have a domain name?",
         data: [
             {
-                placeholder: "A domain name is an address, a name that makes it easy to find your website. Example: www.monnom.com.",
+                placeholder: "A domain name is an address, a name that makes it easy to find your website.<strong> Example: www.monnom.com.</strong>",
                 type: 'description'
             }, {
                 label: "Yes",
