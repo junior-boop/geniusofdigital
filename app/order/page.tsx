@@ -307,11 +307,11 @@ interface Input {
 export function Input({ label, name, placeholder, type, required = false }: Input) {
     return (
         <div className="flex gap-1 lg:gap-4 items-start flex-col flex-grow lg:flex-row">
-            <label className="w-[300px] font-bold text-[18px] lg:text-[24px] lg:pt-2" htmlFor={name}>{label}</label>
+            <label className="w-[300px] font-bold text-[18px] lg:text-[24px] lg:pt-2 text-gray-800" htmlFor={name}>{label}</label>
             {
                 type === 'textarea'
-                    ? <textarea className="flex-1 border p-4 w-full  font-medium h-[250px] focus:bg-slate-100 outline-none text-base lg:text-xl" name={name} placeholder={placeholder} required={required} />
-                    : <input className="flex-1 border px-4 py-2 lg:py-0 w-full font-medium text-base lg:text-xl  lg:h-[50px] focus:bg-slate-100 outline-none" name={name} type={type} placeholder={placeholder} required={required} />
+                    ? <textarea className="flex-1 border p-4 w-full  font-medium h-[250px] focus:bg-slate-100 outline-none text-base lg:text-xl text-gray-800" name={name} placeholder={placeholder} required={required} />
+                    : <input className="flex-1 border px-4 py-2 lg:py-0 w-full font-medium text-base lg:text-xl  lg:h-[50px] focus:bg-slate-100 outline-none text-gray-800" name={name} type={type} placeholder={placeholder} required={required} />
             }
         </div>
     )
@@ -333,15 +333,15 @@ function DynamicInput({ label, name, placeholder, type, required }: DynamicInput
         case "checkbox":
             return (
                 <div className="flex items-center relative px-[34px] lg:px-[55px] my-4">
-                    <input type={type} className=" w-[16px] lg:w-[20px] aspect-square absolute left-0 lg:left-[7px] border bg-slate-300" value={label} name={name} />
-                    <label htmlFor={name} className="text-base lg:text-xl">{label}</label>
+                    <input type={type} className=" w-[16px] lg:w-[20px] aspect-square absolute left-0 lg:left-[7px] border bg-slate-300text-gray-800" value={label} name={name} />
+                    <label htmlFor={name} className="text-base lg:text-xl text-gray-800">{label}</label>
                 </div>
             )
         case "radio":
             return (
                 <div className="flex items-center relative px-[34px] lg:px-[55px] my-4">
-                    <input type={type} className=" w-[16px] lg:w-[20px] aspect-square absolute left-[7px] border bg-slate-300" name={name} value={label} />
-                    <label htmlFor={name} className="text-base lg:text-xl">{label}</label>
+                    <input type={type} className=" w-[16px] lg:w-[20px] aspect-square absolute left-[7px] border bg-slate-300 text-gray-800" name={name} value={label} />
+                    <label htmlFor={name} className="text-base lg:text-xl text-gray-800">{label}</label>
                 </div>
             )
         case "autre":
@@ -349,19 +349,19 @@ function DynamicInput({ label, name, placeholder, type, required }: DynamicInput
         case "textarea":
             return (
                 <div className="flex items-center relative px-0 lg:px-[55px] my-4">
-                    <textarea className=" w-full lg:w-[92%] h flex-1 border p-4 font-medium text-base lg:text-xl h-[200px] focus:bg-slate-100 outline-none" placeholder={placeholder} name={name} ></textarea>
+                    <textarea className=" w-full lg:w-[92%] h flex-1 border p-4 font-medium text-base lg:text-xl h-[200px] focus:bg-slate-100 outline-none text-gray-800" placeholder={placeholder} name={name} ></textarea>
                 </div>
             )
         case 'text':
             return (
                 <div className="flex items-center relative px-[34px] lg:px-[55px] my-4">
-                    <input name={name} type="text" className="flex-1 border px-4 font-medium text-base lg:text-xl h-[50px] focus:bg-slate-100 outline-none w-[90%]" placeholder={placeholder} />
+                    <input name={name} type="text" className="flex-1 border px-4 font-medium text-base lg:text-xl h-[50px] focus:bg-slate-100 outline-none w-[90%] text-gray-800" placeholder={placeholder} />
                 </div>
             )
         case 'description':
             return (
                 <div className="flex items-center relative px-[34px] lg:px-[55px] my-4">
-                    <div className="w-[100%]  italic">{placeholder}</div>
+                    <div className="w-[100%]  italic text-gray-800">{placeholder}</div>
                 </div>
             )
     }
