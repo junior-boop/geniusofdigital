@@ -183,7 +183,7 @@ export default function Home() {
             </div>
           </Container>
         </div>
-        <div className="pb-[150px]">
+        {/* <div className="pb-[150px]">
           <Container>
             <div className="">
               <h1 className="font-display italic text-[40px] px-4 lg:px-0 mb-3 text-gray-800" style={{ lineHeight: 1 }}>
@@ -199,7 +199,7 @@ export default function Home() {
               </div>
             </div>
           </Container>
-        </div>
+        </div> */}
         <MessageUs />
 
       </main>
