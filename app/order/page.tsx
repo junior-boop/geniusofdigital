@@ -1,5 +1,5 @@
 import Container from "@/components/container";
-import { MessageUs } from "../page";
+import { MessageUs } from "@/components/messageUs";
 import { HTMLInputTypeAttribute } from "react";
 import FormItems_Autre from "@/components/formItems_Autre";
 import { db } from '@/firebase'

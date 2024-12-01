@@ -2,7 +2,7 @@
 import Container from "@/components/container";
 import { HeaderTitle } from "../order/page";
 import Link from "next/link";
-import { MessageUs } from "../page";
+import { MessageUs } from "@/components/messageUs";
 import { useEffect, useState } from "react";
 
 import { DataListe, ProjectProps} from '@/app/action/listeData'
