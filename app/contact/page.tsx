@@ -2,7 +2,6 @@
 import Container from "@/components/container";
 import { HeaderTitle, Input } from "../order/page";
 import Submit from "@/components/submit";
-import { MessageUs } from "../page";
 
 export default function Contact() {
 
